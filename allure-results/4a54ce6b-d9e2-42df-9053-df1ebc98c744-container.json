@@ -1,0 +1,1 @@
+{"uuid":"4a54ce6b-d9e2-42df-9053-df1ebc98c744","name":"com.A2y.Base.BaseTest.setup","children":["38697b17-2077-41a9-bded-2d11d988c334"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1741078232215,"stop":1741078237585}],"afters":[],"start":1741078232214,"stop":1741078237586}
