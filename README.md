@@ -18,8 +18,7 @@ Before running the tests, ensure you have the following installed:
 - TestNG
 - Selenium Java
 - WebDriverManager
-- Allure TestNG adapter
-
+- Allure TestNG 
 ## Installation
 
 - Clone the repository:
