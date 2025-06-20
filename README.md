@@ -22,15 +22,15 @@ Before running the tests, ensure you have the following installed:
 
 ## Installation
 
-1. Clone the repository:
+- Clone the repository:
    ```bash
    git clone https://github.com/Karim3allm/EcommerceAutomationTesting.git
 
-2. Run Test:
+- Run Test:
   ```bash
    mvn clean test
 
-3. Generate Allure results report:
+- Generate Allure results report:
   ```bash
   allure serve allure-results
 
