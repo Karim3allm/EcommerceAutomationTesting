@@ -22,7 +22,6 @@ public class PlaceOrderTest extends BaseTest {
                 .SelectProduct()
                 .SelectColorAndSize()
                 .AddToCart()
-                .ShippingAddress()
                 .ProceedToCheckout()
                 .ShippingAddress()
                 .CompletePurchase();

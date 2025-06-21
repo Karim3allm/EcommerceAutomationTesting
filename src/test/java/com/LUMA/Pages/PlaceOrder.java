@@ -4,6 +4,7 @@ import com.LUMA.Base.BasePage;
 import com.LUMA.utils.ConfigUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -66,6 +67,7 @@ public class PlaceOrder extends BasePage {
     public PlaceOrder ProceedToCheckout()
     {
         driver.findElement(By.xpath("//*[@id=\"minicart-content-wrapper\"]/div[2]/div[5]")).click();
+        driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[1]/ul/li[1]/button")).click();
         return this;
     }
 
@@ -73,28 +75,31 @@ public class PlaceOrder extends BasePage {
 
     public PlaceOrder ShippingAddress()
     {
-        driver.findElement(By.name("username")).sendKeys("dummy@gmail.com");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
         driver.findElement(By.name("firstname")).sendKeys("Ahmed");
         driver.findElement(By.name("lastname")).sendKeys("Ali");
         driver.findElement(By.name("street[0]")).sendKeys("Maddi");
         driver.findElement(By.name("city")).sendKeys("Cairo");
 
-        WebElement dropdown = driver.findElement(By.id("FWRC2WX"));
-        Select CourseDropDown = new Select(dropdown);
+        Select CourseDropDown = new Select(driver.findElement(By.name("region_id")));
         CourseDropDown.selectByIndex(3);
 
         driver.findElement(By.name("postcode")).sendKeys("123456");
         driver.findElement(By.name("telephone")).sendKeys("123456789");
         driver.findElement(By.xpath("//*[@id=\"checkout-shipping-method-load\"]/table/tbody/tr[1]/td[1]/input")).click();
+        driver.findElement(By.id("customer-email")).sendKeys("dummy@gmail.com");
         driver.findElement(By.xpath("//*[@id=\"shipping-method-buttons-container\"]/div")).click();
 
         return this;
     }
 
-    public PlaceOrder CompletePurchase()
+    public void CompletePurchase()
     {
-        driver.findElement(By.xpath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div")).click();
-        return this;
+
+        WebElement element = driver.findElement(By.xpath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div/button"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
     }
 
 
