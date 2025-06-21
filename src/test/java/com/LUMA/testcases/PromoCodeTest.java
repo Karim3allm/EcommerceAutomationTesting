@@ -10,13 +10,12 @@ import org.testng.annotations.Test;
 public class PromoCodeTest extends BaseTest {
 
 
-    @Story("")
-    @Description("")
-    @Test(description = "")
+    @Story("Apply promo code")
+    @Description("Check user can apply promo code")
+    @Test(description = "Get promo code discount")
     public void PromoCode()
 
     {
-
         PlaceOrder placeOrder = new PlaceOrder(driver);
         placeOrder.
                 OpenWebsite()

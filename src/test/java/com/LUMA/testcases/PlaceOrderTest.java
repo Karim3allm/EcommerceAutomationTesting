@@ -10,9 +10,9 @@ import org.testng.annotations.Test;
 @Feature("Login Test")
 public class PlaceOrderTest extends BaseTest {
 
-    @Story("")
-    @Description("")
-    @Test (description = "")
+    @Story("Place order")
+    @Description("Verify that user can select item from store and place order successfully")
+    @Test (description = "Add items to cart and confirm order")
 
     public void PlaceOrder()
               {

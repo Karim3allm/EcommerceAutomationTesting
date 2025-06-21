@@ -11,9 +11,9 @@ public class DeleteAndEditCartTest extends BaseTest {
 
 
 
-    @Story("")
-    @Description("")
-    @Test (description = "")
+    @Story("Delete and view products in cart")
+    @Description("Verify that user can delete the cart and view it")
+    @Test (description = "Delete items in cart after adding it")
 
     public void DeleteAndEditCart()
     {
